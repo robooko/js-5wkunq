@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as ReactDOM from 'react-dom';
 
+import './styles/custom-less.less';
 import {PriceLink} from 'travelodge_price_components';
 
 console.log('index');
