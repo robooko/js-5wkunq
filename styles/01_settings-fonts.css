@@ -1,0 +1,11 @@
+@font-face {
+  font-family: FSAlbert Bold;
+  src: url('fonts/fsalbertweb-bold.woff');
+}
+@font-face {
+  font-family: FSAlbert;
+  src: url('fonts/fsalbert-light.otf');
+  src: url('fonts/fsalbertweb-light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

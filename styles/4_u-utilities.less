@@ -1,0 +1,199 @@
+@import (reference) "1_settings.less";
+@import (reference) "2_tools.less";
+@import (reference) "4_l-layouts.less";
+
+/* Utiltiies - u-utilityname - generic commonly used components */
+
+.u-cursor-pointer {
+  cursor: pointer;
+}
+
+.u-embed-responsive {
+  overflow: hidden;
+  position: relative;
+}
+
+.u-embed-responsive--16x9 {
+  padding-bottom: 56.25%;
+}
+
+.u-embed-responsive-4x3 {
+  padding-bottom: 75%;
+}
+
+.u-embed-responsive__item {
+  border: 0 none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.u-hidden {
+  display: none;
+}
+
+.u-hidden-d {
+  @media (min-width: @break-point-tablet) {
+    display: none;
+  }
+}
+
+.u-hidden-t {
+  @media (max-width: @break-point-tablet) {
+    display: none;
+  }
+}
+
+.u-hidden-m {
+  @media (max-width: @break-point-mobile) {
+    display: none;
+  }
+}
+.u-visible-t {
+  @media (max-width: @break-point-tablet) {
+    display: block;
+  }
+}
+.u-visible-m {
+  @media (max-width: @break-point-mobile) {
+    display: block;
+  }
+}
+
+.u-hidden-overflow-m {
+  @media (max-width: @break-point-mobile) {
+    overflow: hidden;
+  }
+}
+
+.u-hide-offscreen {
+  height: 1px;
+  left: -10000px;
+  overflow: hidden;
+  position: absolute;
+  top: auto;
+  width: 1px;
+}
+
+.u-required {
+  color: @colour-required;
+}
+
+.u-required--before {
+  &:before {
+    .font-size(13);
+    padding-right: 5px;
+    vertical-align: super;
+    color: @colour-required;
+    content: "*";
+  }
+}
+
+.u-required--after {
+  &:after {
+    .font-size(13);
+    padding-left: 5px;
+    vertical-align: super;
+    color: @colour-required;
+    content: "*";
+  }
+}
+
+.u-no-m--before {
+  &:before {
+    @media (max-width: @break-point-mobile) {
+      content: none;
+    }
+  }
+}
+
+.u-reset-list {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and stuff
+
+
+.modal-open {
+    // Kill the scroll on the body
+    overflow: hidden;
+
+    .modal {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+
+// Container that the modal scrolls within
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    display: none;
+    overflow: hidden;
+    outline: 0;
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 0 20px 0 20px;
+    pointer-events: none;
+
+    .modal.show & {
+        transform: translate(0, 0);
+    }
+}
+
+.modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    min-height: ~"calc(100% - (4 * 2))";
+
+    &::before {
+        display: block; // IE10
+        height: ~"calc(100vh - (4 * 2))";
+        content: "";
+    }
+}
+
+// Actual modal
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: @colour-white;
+    background-clip: padding-box;
+    border: 1px solid @colour-pinkish-grey;
+    border-radius: 5px;
+    outline: 0;
+}
+
+.modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    .l-p-2;
+    .l-pv-2;
+}
+
+// Measure scrollbar width for padding body during modal show/hide
+.modal-scrollbar-measure {
+    position: absolute;
+    top: -9999px;
+    width: 50px;
+    height: 50px;
+    overflow: scroll;
+}
