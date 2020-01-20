@@ -55,3 +55,74 @@
 @header-logo-max-width: 210px;
 @header-logo-max-width-tablet: 180px;
 @header-logo-max-width-mobile: 145px;
+
+.c-header {
+    padding: 5px 0 5px 0;
+
+    .c-menu-h {
+        margin-left: auto;
+        .u-hidden-t;
+        .u-hidden-m;
+
+        ul {
+            align-items: center;
+            .lf-nowrap;
+            .lf-row;
+            .lf-end;
+
+            li {
+                padding: 0 10px 0 10px;
+            }
+
+            .b-primary {
+                font-family: FSAlbert;
+                .font-size(16);
+                margin-right: 50px;
+            }
+        }
+    }
+
+    .b-burger {
+        .u-hidden-d;
+    }
+
+    .b-basket,
+    .b-burger {
+        .font-size(20);
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 40px;
+        height: 40px;
+        padding: 0 !important;
+        background-color: @brand-secondary;
+
+        i {
+            color: @colour-white;
+        }
+
+        border: none;
+        border-radius: 100%;
+    }
+
+    .b-basket {
+        .lf-col;
+        .lf-center;
+        .l-text-center;
+    }
+
+    .logo {
+        background-image: url(/uk/static/images/travelodge-main-logo.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        height: 30px;
+        width: 200px;
+        margin-top: auto;
+        margin-bottom: auto;
+
+        @media (min-width: @break-point-tablet) {
+            height: 47px;
+            margin: 10px 0 10px 0;
+        }
+    }
+}
