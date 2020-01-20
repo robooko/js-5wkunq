@@ -1,0 +1,138 @@
+@import (reference) "1_settings.less";
+@import (reference) "2_tools.less";
+@import (reference) "4_i-icons.less";
+@import (reference) "4_lf-layout-flex.less";
+@import (reference) "4_l-layouts.less";
+@import (reference) "4_ty-typography.less";
+@import (reference) "4_u-utilities.less";
+
+/* Buttons - b-button - generic commonly used button styles */
+
+.b-button {
+  .transition(background-color, ease-out, 0.1s);
+  .ty-center;
+  align-items: center;
+  border: 0 none;
+  border-radius: 100px;
+  cursor: pointer;
+  padding: 12px;
+  font-size: inherit;
+  font-family: fSAlbert;
+
+  &:hover {
+    .transition(background-color, ease-out, 0.1s);
+  }
+}
+
+.b-primary {
+  .b-button;
+  .font-size(22);
+  border-radius: 5px;
+  color: @colour-white;
+  font-weight:bold;
+  background-color: @brand-secondary;
+}
+
+.b-secondary {
+  .b-button;
+  color: @brand-secondary;
+  background-color: @colour-white;
+  font-weight: bold;
+}
+
+.b-secondary-sm {
+  .b-button;
+  .b-secondary;
+  .font-size(10);
+  padding:5px;
+}
+
+.b-primary-sm {
+  .b-button;
+  .b-primary;
+  .font-size(10);
+  border-radius: 100px;
+  padding: 5px 20px;
+  line-height: 10px !important;
+  height: 25px;
+}
+
+.btn-outline {
+  border: 1px solid @brand-secondary;
+  font-size: 1.3rem;
+  color: @brand-secondary;
+  background-color: transparent;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.btn-outline-white {
+  .font-size(20);
+  border: 1px solid @colour-white;
+  color: @colour-white;
+  background-color: transparent;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.btn-outline-secondary {
+  .font-size(16);
+  border: 1px solid @colour-pinkish-grey;
+  color: @colour-dark-gray;
+  background-color: transparent;
+  margin-left: 5px;
+  line-height: 2rem;
+  cursor: pointer;
+
+  &.btn-accordion {
+    .font-size(12);
+
+    i {
+      .font-size(20);
+      vertical-align: middle;
+    }
+  }
+
+  &:hover {
+    color: @colour-dark-gray;
+    background-image: none;
+    border: 1px solid @colour-pinkish-grey;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0 @colour-white;
+  }
+
+  &.btn-accordion.collapsed:not(a) {
+    display: inline-block;
+
+    i::Before {
+      content: "\f107";
+    }
+  }
+}
+
+.btn-outline-secondary.btn-accordion:not(.collapsed) {
+  background: @colour-light-grey;
+
+  i::Before {
+    content: "\f106";
+  }
+}
+
+.btn-recomentation {
+  .l-center;
+  .b-primary;
+  .lf-row;
+  .l-pv-1;
+  .font-size(14);
+  font-weight: normal;
+  font-family: Helvetica;
+  width: 100%;
+
+  .recomentation-price {
+    .font-size(35);
+    .l-m-5;
+    font-family: FSAlbert Bold;
+  }
+}

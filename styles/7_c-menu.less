@@ -1,0 +1,154 @@
+@import (reference) "1_settings.less";
+@import (reference) "2_tools.less";
+@import (reference) "4_i-icons.less";
+@import (reference) "4_lf-layout-flex.less";
+@import (reference) "4_l-layouts.less";
+@import (reference) "4_ty-typography.less";
+@import (reference) "4_u-utilities.less";
+@import (reference) "5_b-buttons.less";
+
+/* Components - c-menu - menu specific styles */
+
+.c-menu {
+  //line-height: 22px;
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+      .l-p-1;
+      .l-nowrap;
+      list-style-type: none;
+      font-family: Arial;
+      font-size: 14px;
+
+      a {
+        color: @colour-white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.c-menu-h {
+    vertical-align: middle;
+    display: flex;
+    .c-menu;
+    li {
+    }
+}
+
+.mobileMenu {
+  background: @colour-charcoal !important;
+  color: @colour-white !important;
+
+  ul, ol, li {
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin: 0;
+    padding: 0;
+
+    a {
+      color: @colour-white !important;
+    }
+  }
+
+  li a, p {
+    display: block;
+    text-decoration: none;
+    font-family: "FS Albert Light",arial,sans-serif;
+    .font-size(20);
+    padding: 17px 10px;
+    border-bottom: 1px solid @colour-light-grey;
+    margin: 0 15px;
+  }
+
+  .links-panel {
+    border: 1px solid #bdbdbd;
+    float: right;
+    padding: 10px;
+    margin: 10px;
+    color: #fff;
+
+    a {
+      text-decoration: underline;
+      color: #fff;
+
+      .loginText {
+        color: #fff;
+      }
+    }
+  }
+
+  .fa-times-circle {
+    color: @colour-white;
+    .font-size(40);
+    .l-mt-1;
+    .l-ml-1;
+  }
+}
+.mobileMenu {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    overflow: hidden;
+    background: #333;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    z-index: 1016;
+}
+
+.mobileMenu.open {
+    animation: slide-in 0.5s forwards;
+    -webkit-animation: slide-in 0.5s forwards;
+}
+
+.mobileMenu:not(.open) {
+    animation: slide-out 0.5s forwards;
+    -webkit-animation: slide-out 0.5s forwards;
+}
+@keyframes slide-in {
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes slide-in {
+    100% {
+        -webkit-transform: translateX(0%);
+    }
+}
+
+@keyframes slide-out {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@-webkit-keyframes slide-out {
+    0% {
+        -webkit-transform: translateX(0%);
+    }
+
+    100% {
+        -webkit-transform: translateX(-100%);
+    }
+}
+.iClose {
+    border: #fff thin solid;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    .l-ml-2;
+    margin-top: 5px;
+    i {
+        font-size: 30px;
+        color: #fff;
+    }
+}

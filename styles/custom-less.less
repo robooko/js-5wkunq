@@ -1,6 +1,7 @@
 
-@import (reference) "1_settings.less";
-@import (reference) "6_base.less";
+@import "1_settings.less";
+@import "4_ty-typography.less";
+@import "6_base.less";
 
 html, body {
   padding: 0;
@@ -9,3 +10,501 @@ html, body {
 .c-header {
  background-color: @brand-primary;
 }
+
+
+body {
+    font-family: arial, sans-serif;
+    overflow-x: hidden;
+
+    &.no-scroll {
+        overflow: hidden;
+    }
+}
+.breadcrumbs {
+    .l-m-3;
+    .l-m-p6tl;
+    .l-m-0t;
+    .l-pl-3;
+    .font-size(13);
+    .line-height(53);
+
+    a {
+        text-decoration: none;
+        color: @colour-charcoal;
+    }
+}
+
+.threecolumn {
+    columns: 3;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+}
+
+.hotel-cards {
+    .l-m-3;
+    .l-m-p6tl;
+    .l-m-0t;
+    .l-mb-2;
+
+    h1 {
+        .font-size(24);
+        font-weight: normal;
+        margin-top: 0;
+        padding-top: 20px;
+        .l-mb-1;
+    }
+
+    .hotelsincontainer {
+        margin: 10px 3% 10px 3%;
+        box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
+        transition: margin-top 100ms,margin-bottom 100ms,box-shadow 100ms;
+        -webkit-transition: margin-top 100ms, margin-bottom 100ms,box-shadow 100ms;
+        background-color: @colour-white;
+
+        &:hover {
+            box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
+            margin-top: 9px;
+            margin-bottom: 11px;
+        }
+
+        a.hotel-card {
+            text-decoration: none;
+
+            .hotelsin {
+                .l-p-3;
+                .l-pb-3;
+                width: 100%;
+                background-color: @colour-white;
+
+                .card-title {
+                    .font-size(18);
+                    .l-pv-1;
+                    .lf-col;
+                    .lf-space-around;
+                    margin: 0;
+                    font-weight: bold;
+                    height: 70px;
+                    color: @colour-grey-text;
+                    font-family: FSAlbert;
+                }
+
+                .b-primary {
+                    font-weight: normal;
+                    .font-size(20);
+                    height: 40px;
+                    width: 100%;
+                    padding: 0;
+                    text-decoration: none;
+                    display: block;
+                    line-height: 40px;
+
+                    &:hover {
+                        background-color: @colour-white !important;
+                        border: 1px solid #008dc8;
+                        color: #008dc8;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.img-fluid {
+    object-fit: contain;
+    width: 100%;
+    background-color: @colour-white;
+}
+
+h1, h2, h3 {
+    font-family: FSAlbert;
+}
+
+
+.pi-chevron-left,
+.pi-chevron-right {
+    font-size: 2.25em !important;
+    color: @brand-secondary;
+    top: 100% !important;
+}
+
+body .ui-datepicker table td {
+    padding: 0em !important;
+}
+
+.ui-datepicker {
+    border: 0 !important;
+    width: 400px;
+    padding: 0 !important;
+
+    .ui-datepicker-calendar > thead > tr > th > span {
+        color: @colour-grey-text;
+        .font-size(11);
+        font-weight: 100;
+    }
+
+    .ui-datepicker-month {
+        .font-size(20);
+        color: @colour-grey-text;
+    }
+
+    .ui-datepicker-year {
+        .u-hidden;
+    }
+
+    :not(thead) {
+        .ng-star-inserted {
+            a > span {
+                .font-size(12) !important;
+            }
+        }
+    }
+
+    .ui-datepicker-current-day {
+
+        a {
+            padding: 0;
+            line-height: 33px;
+
+            .dpDate {
+                height: 33px;
+                width: 33px;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 100%;
+            }
+
+            .dpBackground {
+
+                &:not(.dpcheckin) {
+                    background: linear-gradient(90deg, @colour-dark-blue-o 50%, @colour-dark-blue-o 50%);
+                }
+
+                &.ischeckin {
+
+                    &:not(.dpcheckin) {
+                        background: linear-gradient(90deg, transparent 50%, @colour-dark-blue-o 50%);
+                    }
+
+                    .dpDate {
+                        background: linear-gradient(90deg, @colour-dark-blue 50%, @colour-dark-blue 50%);
+                    }
+                }
+
+                &.ischeckout {
+                    background: linear-gradient(90deg, @colour-dark-blue-o 50%, transparent 50%);
+
+                    .dpDate {
+                        background: linear-gradient(90deg, @colour-dark-blue 50%, @colour-dark-blue 50%);
+                    }
+                }
+            }
+        }
+    }
+
+    .ui-datepicker-today a {
+        background-color: transparent !important;
+    }
+
+    a.ui-state-active {
+        background-color: transparent !important;
+        color: @colour-white !important;
+        border-radius: 100% !important;
+    }
+}
+
+
+ul :not(.ui-state-highlight) i.fas,
+ul :not(.ui-state-highlight) i.far {
+    color: @brand-secondary;
+    font-size: 1.3rem;
+}
+
+ul .ui-state-highlight i.fas,
+ul .ui-state-highlight i.far {
+    color: @colour-white;
+    font-size: 1.3rem;
+}
+
+.ui-inputswitch {
+    width: 56px !important;
+    height: 32px !important;
+
+    .ui-inputswitch-slider:before {
+        top: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        .font-size(20);
+        text-align: center;
+        line-height: 2.2rem;
+        height: 32px !important;
+        width: 32px !important;
+    }
+}
+
+body .ui-inputswitch.ui-inputswitch-checked .ui-inputswitch-slider,
+body .ui-inputswitch.ui-inputswitch-checked.ui-inputswitch-focus .ui-inputswitch-slider,
+body .ui-inputswitch.ui-inputswitch-checked:not(.ui-state-disabled):hover .ui-inputswitch-slider {
+    background-color: #91d062;
+}
+
+.i-barcafe {
+    .ui-inputswitch-slider {
+        &:before {
+            font-family: "Font Awesome 5 Free";
+            content: "\f2e7";
+            font-weight: bold;
+        }
+    }
+}
+
+.i-viewmap {
+    .ui-inputswitch-slider {
+        &:before {
+            font-family: "Font Awesome 5 Free";
+            content: "\f3c5";
+            font-weight: bold;
+        }
+    }
+}
+
+.i-accessible {
+    .ui-inputswitch-slider {
+        &:before {
+            font-family: "Font Awesome 5 Brands";
+            content: "\f368";
+            font-weight: bold;
+        }
+    }
+}
+
+body .ui-dataview .ui-dataview-header {
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+}
+
+body .ui-dataview .ui-dataview-content {
+    border: 0;
+    background-color: #f2f2f2;
+    padding: 40px 0;
+}
+
+.ui-dataview-grid {
+    .ui-dataview-content {
+        .ui-g {
+            .l-p-2;
+        }
+    }
+}
+
+.showGridMap {
+    .ui-dataview-grid {
+        .ui-dataview-content {
+            .ui-g {
+                width: 50%;
+            }
+        }
+    }
+}
+
+.ui-dataview-list {
+    .ui-dataview-content {
+        .ui-g {
+            .container;
+
+            img.responsive-img {
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+body .ui-carousel .ui-carousel-viewport {
+    background-color: transparent;
+}
+
+
+.popover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1060;
+    display: none;
+    padding: 1px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-break: auto;
+    line-height: 1.42857143;
+    text-align: left;
+    text-align: start;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    white-space: normal;
+    word-break: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+    font-size: 14px;
+    background-color: #ffffff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #cccccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+
+    @media only screen and (max-width : 768px) {
+        left: auto;
+        right: auto;
+        width: 95vw;
+    }
+}
+
+.bs-popover-bottom {
+    margin-top: 10px;
+}
+
+.popover-content {
+    padding: 9px 14px;
+}
+
+.popover > .arrow,
+.popover > .arrow:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    left: 50%;
+}
+
+.popover-body {
+    overflow: hidden;
+}
+
+.popover > .arrow {
+    border-width: 11px;
+    left: 50%;
+}
+
+.popover > .arrow:after {
+    border-width: 10px;
+    content: "";
+    left: 50%;
+}
+
+.bs-popover-bottom > .arrow {
+    border-top-width: 0;
+    border-bottom-color: #999999;
+    border-bottom-color: rgba(0, 0, 0, 0.25);
+    top: -11px;
+    left: 50%;
+}
+
+.bs-popover-bottom > .arrow:after {
+    content: " ";
+    top: 1px;
+    margin-left: -10px;
+    border-top-width: 0;
+    border-bottom-color: #ffffff;
+    left: 50%;
+}
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.c-occupancy {
+    width: 380px;
+
+    .c-roomtitle {
+        .gray-panel;
+        .l-p-2;
+        .font-size(20);
+        .line-height(35);
+        height: 35px;
+        color: @colour-dark-gray;
+    }
+
+    .c-label-count {
+        .lf-1x6;
+        .l-text-center;
+        .font-size(16);
+        font-weight: normal;
+        font-family: HelveticaNeue;
+        color: @colour-grey-text;
+        .line-height(40);
+    }
+
+    .c-label-person {
+        font-family: Arial;
+        font-weight: normal;
+        color: @colour-grey-text;
+        .line-height(40);
+        .font-size(16);
+        .lf-1x3;
+        .l-text-right;
+        .l-pr-20;
+    }
+
+    .c-removeRoom {
+        color: @colour-blue;
+        text-decoration: underline;
+        .font-size(12);
+        .lf-1x2;
+        .l-text-right;
+    }
+
+    .btn-outline {
+        width: 39.3px;
+        height: 39.3px;
+    }
+
+    @media (max-width: @break-point-mobile) {
+        max-width: 95vw;
+        width: 95vw;
+    }
+}
+
+.card9 {
+    @media (max-width: @break-point-tablet-large) {
+        display: none;
+    }
+
+    @media (max-width: @break-point-tablet) {
+        display: block;
+    }
+
+    @media (max-width: @break-point-mobile) {
+        display: block;
+    }
+}
+
+.card10 {
+    @media (max-width: @break-point-tablet-large) {
+        .u-hidden;
+    }
+    @media (max-width: @break-point-mobile) {
+        display: block;
+    }
+}
+
