@@ -1,11 +1,11 @@
 @font-face {
   font-family: FSAlbert Bold;
-  src: url('fonts/fsalbertweb-bold.woff');
+  src: url('https://travelodge-fusion-v2.s3.eu-west-2.amazonaws.com/uk/content/fonts/FSAlbertWeb-Bold.woff');
 }
 @font-face {
   font-family: FSAlbert;
-  src: url('fonts/fsalbert-light.otf');
-  src: url('fonts/fsalbertweb-light.woff') format('woff');
+  src: url('https://travelodge-fusion-v2.s3.eu-west-2.amazonaws.com/uk/content/fonts/FSAlbert-Light.otf');
+  src: url('https://travelodge-fusion-v2.s3.eu-west-2.amazonaws.com/uk/content/fonts/FSAlbertWeb-Light.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
