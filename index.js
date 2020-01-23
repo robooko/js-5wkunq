@@ -11,49 +11,63 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const priceLink = document.getElementById('pricelink');
 
+const txtLocation = document.getElementById('txtLocation');
+const txtCheckin = document.getElementById('txtCheckin1');
 
 var state = {
-    startDate: new Date()
+    startDate: new Date(),
+    
+    endDate: new Date()
   };
+
+  var start = (state.startDate.getUTCMonth()  + 1).toString() + "-" +
+          (state.startDate.getUTCDate() + 1).toString() +
+          "-" + state.startDate.getUTCFullYear();
+state.endDate.setDate(state.startDate.getDate()+7);
+var end = (state.endDate.getUTCMonth()  + 1).toString() + "-" +
+          (state.endDate.getUTCDate() + 1).toString() +
+          "-" + state.endDate.getUTCFullYear();
 
 ReactDOM.render(
   <PriceGrid
    destination='London' 
-  start='12-18-2019' end='12-21-2019' />,
+  start={start} end={end}  />,
   priceLink
 );
+
 
 function handleChange(date) 
 {
       ReactDOM.unmountComponentAtNode(txtCheckin);
       state.startDate = date;
+
+      
+var start = (state.startDate.getUTCMonth()  + 1).toString() + "-" +
+          (state.startDate.getUTCDate() + 1).toString() +
+          "-" + state.startDate.getUTCFullYear();
+state.endDate.setDate(state.startDate.getDate()+7);
+var end = (state.endDate.getUTCMonth()  + 1).toString() + "-" +
+          (state.endDate.getUTCDate() + 1).toString() +
+          "-" + state.endDate.getUTCFullYear();
+
       ReactDOM.render(
-  <DatePicker
-  
+  <DatePicker  
         onChange={handleChange}
         selected={state.startDate}
       />,
   txtCheckin
 );
-var start = (date.getUTCMonth()  + 1).toString() + "-" +
-          (date.getUTCDate() + 1).toString() +
-          "-" + date.getUTCFullYear()
-var end = (date.getUTCMonth()  + 1).toString() + "-" +
-          (date.getUTCDate() + 1).toString() +
-          "-" + date.getUTCFullYear();
+
 
  ReactDOM.unmountComponentAtNode(priceLink);
-
   ReactDOM.render(
   <PriceGrid
-   destination={event.target.value} 
+   destination={txtLocation.value} 
   start={start} end={end} />,
   priceLink
 );
   }
 
-const txtLocation = document.getElementById('txtLocation');
-const txtCheckin = document.getElementById('txtCheckin1');
 
 ReactDOM.render(
   <DatePicker
