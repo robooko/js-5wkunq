@@ -4,9 +4,17 @@ import * as ReactDOM from 'react-dom';
 import './assets/custom-less.less';
 import {PriceLink, PriceGrid} from 'travelodge_price_components';
 
-console.log('index');
+
+import DatePicker from "react-datepicker";
+ 
+import "react-datepicker/dist/react-datepicker.css";
+
 const priceLink = document.getElementById('pricelink');
-console.log(priceLink);
+
+
+var state = {
+    startDate: new Date()
+  };
 
 ReactDOM.render(
   <PriceGrid
@@ -15,8 +23,47 @@ ReactDOM.render(
   priceLink
 );
 
+function handleChange(date) 
+{
+      ReactDOM.unmountComponentAtNode(txtCheckin);
+      state.startDate = date;
+      ReactDOM.render(
+  <DatePicker
+  
+        onChange={handleChange}
+        selected={state.startDate}
+      />,
+  txtCheckin
+);
+var start = (date.getUTCMonth()  + 1).toString() + "-" +
+          (date.getUTCDate() + 1).toString() +
+          "-" + date.getUTCFullYear()
+var end = (date.getUTCMonth()  + 1).toString() + "-" +
+          (date.getUTCDate() + 1).toString() +
+          "-" + date.getUTCFullYear();
+
+ ReactDOM.unmountComponentAtNode(priceLink);
+
+  ReactDOM.render(
+  <PriceGrid
+   destination={event.target.value} 
+  start={start} end={end} />,
+  priceLink
+);
+  }
 
 const txtLocation = document.getElementById('txtLocation');
+const txtCheckin = document.getElementById('txtCheckin1');
+
+ReactDOM.render(
+  <DatePicker
+  
+        onChange={handleChange}
+        selected={state.startDate}
+      />,
+  txtCheckin
+);
+
 txtLocation.addEventListener('change', (event) => {
 
       ReactDOM.unmountComponentAtNode(priceLink);
