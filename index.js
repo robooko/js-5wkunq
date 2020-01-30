@@ -4,7 +4,6 @@ import * as ReactDOM from 'react-dom';
 import './assets/custom-less.less';
 import {PriceLink, PriceGrid} from 'travelodge_price_components';
 
-
 import DatePicker from "react-datepicker";
  
 import "react-datepicker/dist/react-datepicker.css";
