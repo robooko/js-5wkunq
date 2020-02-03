@@ -22,7 +22,7 @@ var state = {
   var start = (state.startDate.getUTCMonth()  + 1).toString() + "-" +
           (state.startDate.getUTCDate()).toString() +
           "-" + state.startDate.getUTCFullYear();
-state.endDate = new Date(state.startDate.getTime() + (86400000 * 7));
+state.endDate = new Date(state.startDate.getTime() + (86400000 * 6));
 var end = (state.endDate.getUTCMonth()  + 1).toString() + "-" +
           (state.endDate.getUTCDate()).toString() +
           "-" + state.endDate.getUTCFullYear();
@@ -44,7 +44,7 @@ function handleChange(date)
 var start = (state.startDate.getUTCMonth()  + 1).toString() + "-" +
           (state.startDate.getUTCDate()).toString() +
           "-" + state.startDate.getUTCFullYear();
-state.endDate = new Date(state.startDate.getTime() + (86400000 * 7));
+state.endDate = new Date(state.startDate.getTime() + (86400000 * 6));
 var end = (state.endDate.getUTCMonth()  + 1).toString() + "-" +
           (state.endDate.getUTCDate()).toString() +
           "-" + state.endDate.getUTCFullYear();
