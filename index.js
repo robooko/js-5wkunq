@@ -84,7 +84,7 @@ txtLocation.addEventListener('change', (event) => {
   ReactDOM.render(
   <PriceGrid
    destination={event.target.value} 
-  start='12-18-2019' end='12-21-2019' />,
+  start={start} end={end}  />,
   priceLink
 );
 });
