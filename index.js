@@ -7,6 +7,7 @@ import {PriceLink, PriceGrid} from 'travelodge_price_components';
 import DatePicker from "react-datepicker";
  
 import "react-datepicker/dist/react-datepicker.css";
+import searchIcon from './assets/images/search.svg';
 
 const priceLink = document.getElementById('pricelink');
 

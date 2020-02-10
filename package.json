@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@fortawesome/free-solid-svg-icons": "^5.12.0",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "react": "^16.12.0",
-    "react-datepicker": "^2.11.0",
+    "react-datepicker": "^2.12.1",
     "react-dom": "^16.12.0",
-    "travelodge_price_components": "^1.6.56",
+    "travelodge_price_components": "^1.6.59",
     "typescript": "^3.7.5"
   }
 }
