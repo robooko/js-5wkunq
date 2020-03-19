@@ -7,7 +7,7 @@
     "react": "^16.13.0",
     "react-datepicker": "^2.14.0",
     "react-dom": "^16.13.0",
-    "travelodge_price_components": "^1.6.72",
+    "travelodge_price_components": "^1.6.73",
     "typescript": "^3.8.3"
   }
 }
